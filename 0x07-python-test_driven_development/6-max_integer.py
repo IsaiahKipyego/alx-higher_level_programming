@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module to find max integer in a list
+"""Module to find the max integer in a list
 """
 
 
@@ -10,9 +10,9 @@ def max_integer(list=[]):
     if len(list) == 0:
         return None
     result = list[0]
-    j = 1
-    while j < len(list):
-        if list[j] > result:
-            result = list[j]
-        j += 1
+    i = 1
+    while i < len(list):
+        if list[i] > result:
+            result = list[i]
+        i += 1
     return result
