@@ -1,20 +1,24 @@
 #!/usr/bin/python3
 """
-module containing class Rectangle
+A module that contains class Rectangle
 """
 
 
 class Rectangle:
     """
-    A class Rectangle which defines a Rectangle with two properties
+    A class Rectangle defining Rectangle with two properties
     whose properties are it's width and height
     """
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         Initializes private attributes width and height
         """
         self.height = height
         self.width = width
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -47,20 +51,20 @@ class Rectangle:
         setter method for height
         """
         if type(value) != int:
-            raise TypeError("height must be an integer")
+            raise TypeError("height must be integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
         """
-        public instance method,for finding area of the Rectangle
+        public instance method, that finds area of the Rectangle
         """
         return (self.__width * self.__height)
 
     def perimeter(self):
         """
-        public instance method, finds perimeter of the Rectangle
+        public instance method, that finds perimeter of the Rectangle
         """
         if self.__width == 0 or self.__height == 0:
             return (0)
@@ -81,7 +85,7 @@ class Rectangle:
     def __repr__(self):
         """
         returns a string representation of rectangle
-        can be used to create a new instance using eval()
+        used to create a new instance using eval()
         """
         str_tuple = (self.__width, self.__height)
         string = "Rectangle" + str(str_tuple)
@@ -91,5 +95,6 @@ class Rectangle:
         """
         print message when instance is deleted
         """
+        type(self).number_of_instances -= 1
         del self
         print("Bye rectangle...")
