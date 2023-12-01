@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""
-from an api then searches for a letter
+"""A script that
+-accpets in a letter sends POST request to http://0.0.0.0:5000/search_user
+with letter as a parameter.
 """
 import sys
 import requests
